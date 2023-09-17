@@ -502,7 +502,7 @@
   (tree-sitter-hl-face:variable.synthesized      (:foreground waveRed))
   (tree-sitter-hl-face:keyword.compiler          (:foreground peachRed :bold t :italic t))
 
-  (focus-unfocused (:foreground sumiInk-4))
+  (focus-unfocused                               (:foreground sumiInk-4))
  ))
 
 ;;;###autoload
