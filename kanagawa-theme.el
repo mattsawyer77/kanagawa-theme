@@ -405,7 +405,7 @@
   
   (comint-highlight-prompt                       (:background springViolet2 :foreground sumiInk-1))
   (completions-annotations                       (:background nil :foreground dragonBlue :italic t))
-  (marginalia-file-priv-no                       (:background nil))
+  (marginalia-file-priv-no                       (:background 'unspecified))
   
   ;; hydra
   (hydra-face-amaranth                           (:foreground autumnRed))
