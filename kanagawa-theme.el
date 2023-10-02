@@ -108,14 +108,14 @@
   (hi-yellow                                     (:background carpYellow :foreground sumiInk-1b))
 
   ;; Font lock
-  (font-lock-type-face                           (:foreground waveAqua2))
+  (font-lock-type-face                           (:foreground waveAqua2 :weight 'bold))
   (font-lock-regexp-grouping-backslash           (:foreground boatYellow2))
   (font-lock-keyword-face                        (:foreground oniViolet :weight 'bold))
   (font-lock-warning-face                        (:foreground roninYellow))
   (font-lock-string-face                         (:foreground springGreen) :background sumiInk-1c)
-  (font-lock-builtin-face                        (:foreground springBlue))
+  (font-lock-builtin-face                        (:foreground springBlue :weight 'bold))
   (font-lock-reference-face                      (:foreground peachRed))
-  (font-lock-constant-face                       (:foreground carpYellow))
+  (font-lock-constant-face                       (:foreground carpYellow :weight 'bold))
   (font-lock-function-name-face                  (:foreground crystalBlue :weight 'bold))
   (font-lock-variable-name-face                  (:foreground waveRed))
   (font-lock-negation-char-face                  (:foreground peachRed))
@@ -123,7 +123,7 @@
   (font-lock-comment-delimiter-face              (:foreground fujiGray))
   (font-lock-doc-face                            (:foreground comet))
   (font-lock-doc-markup-face                     (:foreground comet))
-  (font-lock-preprocessor-face                    (:foreground boatYellow2))
+  (font-lock-preprocessor-face                   (:foreground boatYellow2))
   (elisp-shorthand-font-lock-face                (:foreground fujiWhite))
 
   (info-xref                                     (:foreground carpYellow))
@@ -468,25 +468,25 @@
 
   (tree-sitter-hl-face:embedded                  (:foreground boatYellow2))
 
-  (tree-sitter-hl-face:function                  (:bold t :foreground crystalBlue))
-  (tree-sitter-hl-face:function.builtin          (:bold t :foreground peachRed :background winterRed))
-  (tree-sitter-hl-face:function.call             (:bold t :foreground springViolet2))
-  (tree-sitter-hl-face:function.macro            (:bold t :foreground samuraiRed))
-  (tree-sitter-hl-face:function.special          (:bold t :foreground sakuraPink))
-  (tree-sitter-hl-face:function.label            (:bold t :foreground surimiOrange))
+  (tree-sitter-hl-face:function                  (:bold t :foreground crystalBlue :weight 'bold))
+  (tree-sitter-hl-face:function.builtin          (:bold t :foreground peachRed :background winterRed :weight 'bold))
+  (tree-sitter-hl-face:function.call             (:bold t :foreground springViolet2 :weight 'bold))
+  (tree-sitter-hl-face:function.macro            (:bold t :foreground samuraiRed :weight 'bold))
+  (tree-sitter-hl-face:function.special          (:bold t :foreground sakuraPink :weight 'bold))
+  (tree-sitter-hl-face:function.label            (:bold t :foreground surimiOrange :weight 'bold))
 
-  (tree-sitter-hl-face:method                    (:bold t :foreground lightBlue))
-  (tree-sitter-hl-face:method.call               (:bold t :foreground lightBlue))
+  (tree-sitter-hl-face:method                    (:bold t :foreground lightBlue :weight 'bold))
+  (tree-sitter-hl-face:method.call               (:bold t :foreground lightBlue :weight 'bold))
 
   (tree-sitter-hl-face:property                  (:foreground carpYellow))
   (tree-sitter-hl-face:property.definition       (:foreground old-white))
 
   (tree-sitter-hl-face:tag                       (:bold t :foreground peachRed))
 
-  (tree-sitter-hl-face:type                      (:bold t :foreground waveAqua2))
-  (tree-sitter-hl-face:type.argument             (:bold t :foreground surimiOrange))
-  (tree-sitter-hl-face:type.builtin              (:bold t :foreground autumnRed))
-  (tree-sitter-hl-face:type.parameter            (:bold t :foreground surimiOrange))
+  (tree-sitter-hl-face:type                      (:bold t :foreground waveAqua2 :weight 'bold))
+  (tree-sitter-hl-face:type.argument             (:bold t :foreground surimiOrange :weight 'bold))
+  (tree-sitter-hl-face:type.builtin              (:bold t :foreground autumnRed :weight 'bold))
+  (tree-sitter-hl-face:type.parameter            (:bold t :foreground surimiOrange :weight 'bold))
   (tree-sitter-hl-face:type.super                (:bold t :foreground samuraiRed :bold t))
 
   (tree-sitter-hl-face:variable                  (:foreground springBlue))
