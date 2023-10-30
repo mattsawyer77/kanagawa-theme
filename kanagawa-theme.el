@@ -12,6 +12,12 @@
 (unless (>= emacs-major-version 24)
   (error "Requires Emacs 24 or later"))
 
+;; wrap autothemer-deftheme so that autothemer-based theme color names are exported
+(define-advice autothemer-deftheme (:before (_ _ palette &rest _) defcolors)
+  (mapcar (lambda (e)
+            (setf (symbol-value (car e))
+                  (cadr e)))
+          (cdr palette)))
 
 (autothemer-deftheme
  kanagawa "A theme inspired by the colors of the famous painting by Katsushika Hokusa"
@@ -112,7 +118,7 @@
   (font-lock-regexp-grouping-backslash           (:foreground boatYellow2))
   (font-lock-keyword-face                        (:foreground oniViolet :bold t))
   (font-lock-warning-face                        (:foreground roninYellow))
-  (font-lock-string-face                         (:foreground springGreen) :background sumiInk-1c)
+  (font-lock-string-face                         (:foreground springGreen) :background sumiInk-2)
   (font-lock-builtin-face                        (:foreground springBlue :bold t))
   (font-lock-reference-face                      (:foreground peachRed))
   (font-lock-constant-face                       (:foreground carpYellow :bold t))
@@ -184,9 +190,14 @@
   (org-meta-line                                 (:background winterGreen :foreground springGreen))
   (org-block                                     (:background sumiInk-0 :foreground sumiInk-4))
   (org-block-begin-line                          (:background winterBlue :foreground springBlue))
-  (org-block-end-line                             (:background winterRed :foreground peachRed))
+  (org-block-end-line                            (:background winterRed :foreground peachRed))
   (org-headline-done                             (:foreground dragonBlue :strike-through t))
-  (org-todo                                      (:foreground surimiOrange :bold t))
+  (org-todo                                      (:background crystalBlue  :bold t))
+  (+org-todo-active                              (:background springGreen :bold t))
+  (+org-todo-cancel                              (:background peachRed :bold t))
+  (+org-todo-onhold                              (:background carpYellow :bold t))
+  (+org-todo-project                             (:background crystalBlue :bold t))
+
   (org-headline-todo                             (:foreground sumiInk-2))
   (org-upcoming-deadline                         (:foreground peachRed))
   (org-footnote                                  (:foreground waveAqua2))
@@ -276,6 +287,8 @@
   (flycheck-fringe-warning                       (:foreground lightBlue))
   (flycheck-fringe-error                         (:foreground samuraiRed))
   (flycheck-fringe-info                          (:foreground autumnGreen))
+  (flycheck-error                                (:background samuraiRed :foreground "white"))
+  (flycheck-warning                              (:background surimiOrange :foreground "white"))
   (flycheck-error-list-warning                   (:foreground roninYellow :bold t))
   (flycheck-error-list-error                     (:foreground samuraiRed :bold t))
   (flycheck-error-list-info                      (:foreground waveAqua1 :bold t))
