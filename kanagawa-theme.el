@@ -1,5 +1,4 @@
 ;;; package: --- A theme inspired by the colors of the famous painting by Katsushika Hokusa
-
 ;;; Commentary: Original theme created by rebelot see: https://github.com/rebelot/kanagawa.nvim
 ;;; forked from https://github.com/Meritamen/kanagawa-theme
 ;;; Code:
@@ -84,7 +83,8 @@
   (highlight                                     (:background comet :foreground springViolet1))
   (hl-line                                       (:background sumiInk-2))
   (homoglyph                                     (:foreground lightBlue))
-  (internal-border                               (:background sumiInk-1b))
+  (internal-border                               (:background sumiInk-1))
+  (vertical-border                               (:foreground sumiInk-1b))
   (line-number                                   (:foreground sumiInk-1c))
   (line-number-current-line                      (:foreground springViolet2 :background sumiInk-2 :bold t))
   (lv-separator                                  (:foreground waveBlue-2 :background sumiInk-2))
@@ -100,9 +100,7 @@
   (separator-line                                (:background sumiInk-0))
   (shadow                                        (:background sumiInk-0))
   (success                                       (:foreground waveAqua2))
-  (vertical-border                               (:foreground sumiInk-1b))
   (warning                                       (:foreground roninYellow))
-  (window-border                                 (:background sumiInk-1b))
   (window-divider                                (:foreground sumiInk-0))
   (hi-yellow                                     (:background carpYellow :foreground sumiInk-1b))
 
@@ -318,7 +316,7 @@
   (ivy-posframe                                  (:background sumiInk-2))
   (ivy-posframe-border                           (:background sumiInk-3))
 
-  ;;treemacs
+  ;; treemacs
   (treemacs-window-background-face               (:background sumiInk-1b))
   (treemacs-directory-collapsed-face             (:foreground fujiWhite))
   (treemacs-directory-face                       (:foreground fujiWhite))
