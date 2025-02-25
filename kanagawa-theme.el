@@ -111,7 +111,7 @@
   (font-lock-regexp-grouping-backslash           (:foreground boatYellow2))
   (font-lock-keyword-face                        (:foreground oniViolet :bold t))
   (font-lock-warning-face                        (:foreground roninYellow))
-  (font-lock-string-face                         (:foreground springGreen) :background sumiInk-1b)
+  (font-lock-string-face                         (:foreground springGreen) :background sumiInk-2)
   (font-lock-builtin-face                        (:foreground springBlue :bold t))
   (font-lock-reference-face                      (:foreground peachRed))
   (font-lock-constant-face                       (:foreground carpYellow :bold t))
