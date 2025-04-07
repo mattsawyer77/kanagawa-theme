@@ -64,7 +64,7 @@
   (sakuraPink           "#D27E99" "#717C7C")
   (waveRed              "#E46876" "#717C7C")
   (peachRed             "#FF5D62" "#717C7C")
-  (surimiOrange         "#717C7C" "#717C7C")
+  (surimiOrange         "#FFA066" "#717C7C")
   (comet                "#54536D" "#4e4e4e"))
 
  ;; Customize faces
@@ -105,22 +105,33 @@
   (hi-yellow                                     (:background carpYellow :foreground sumiInk-1b))
 
   ;; Font lock
-  (font-lock-type-face                           (:foreground waveAqua2 :bold t))
-  (font-lock-regexp-grouping-backslash           (:foreground boatYellow2))
-  (font-lock-keyword-face                        (:foreground oniViolet :bold t))
-  (font-lock-warning-face                        (:foreground roninYellow))
-  (font-lock-string-face                         (:foreground springGreen) :background sumiInk-2)
-  (font-lock-builtin-face                        (:foreground springBlue :bold t))
-  (font-lock-reference-face                      (:foreground peachRed))
-  (font-lock-constant-face                       (:foreground carpYellow :bold t))
-  (font-lock-function-name-face                  (:foreground crystalBlue :bold t))
-  (font-lock-variable-name-face                  (:foreground waveRed))
-  (font-lock-negation-char-face                  (:foreground peachRed))
-  (font-lock-comment-face                        (:foreground fujiGray))
-  (font-lock-comment-delimiter-face              (:foreground fujiGray))
-  (font-lock-doc-face                            (:foreground comet))
-  (font-lock-doc-markup-face                     (:foreground comet))
-  (font-lock-preprocessor-face                   (:foreground boatYellow2))
+  (font-lock-bracket-face (:foreground autumnRed :bold t)) ;; brackets, braces, and parens.
+  (font-lock-builtin-face (:bold t :foreground springViolet1 :bold t)) ;; builtins.
+  (font-lock-constant-face (:foreground roninYellow)) ;; constants and labels.
+  (font-lock-delimiter-face (:foreground springViolet2 :bold t)) ;; delimiters.
+  (font-lock-escape-face (:foreground sakuraPink)) ;; escape sequences in strings.
+  (font-lock-function-call-face (:bold t :foreground lightBlue :bold t)) ;; function calls.
+  (font-lock-function-name-face (:bold t :foreground lightBlue :bold t)) ;; function names.
+  (font-lock-keyword-face (:foreground oniViolet :weight 'semi-bold)) ;; keywords.
+  (font-lock-misc-punctuation-face (:foreground peachRed)) ;; miscellaneous punctuation.
+  (font-lock-negation-char-face (:foreground surimiOrange)) ;; easy to overlook negation.
+  (font-lock-number-face (:foreground sakuraPink)) ;; numbers.
+  (font-lock-operator-face (:foreground waveRed :bold t)) ;; operators.
+  (font-lock-preprocessor-face (:foreground surimiOrange)) ;; preprocessor directives.
+  (font-lock-property-name-face (:foreground old-white)) ;; properties of an object.
+  (font-lock-property-use-face (:foreground carpYellow)) ;; property references.
+  (font-lock-punctuation-face (:foreground lightBlue)) ;; punctuation characters.
+  (font-lock-regexp-face (:foreground surimiOrange)) ;; regexp literals.
+  (font-lock-type-face (:bold t :foreground surimiOrange :bold t)) ;; type and class names.
+  (font-lock-variable-name-face (:foreground springBlue)) ;; variable names.
+  (font-lock-variable-use-face (:foreground springBlue)) ;; variable references.
+  ;; (font-lock-comment-delimiter-face) ;; comment delimiters.
+  (font-lock-comment-face (:foreground fujiGray)) ;; comments.
+  ;; (font-lock-doc-face) ;; documentation embedded in program code.
+  ;; (font-lock-doc-markup-face) ;; embedded documentation mark-up.
+  (font-lock-string-face (:foreground fujiWhite :background sumiInk-2)) ;; strings.
+  ;; (font-lock-warning-face) ;; warnings.
+
   (elisp-shorthand-font-lock-face                (:foreground fujiWhite))
 
   (info-xref                                     (:foreground carpYellow))
@@ -465,52 +476,41 @@
   (ansi-color-bright-white                       (:foreground old-white))
 
   (tree-sitter-hl-face:attribute                 (:bold t :foreground surimiOrange))
-  (tree-sitter-hl-face:escape                    (:foreground waveRed))
-  (tree-sitter-hl-face:constructor               (:bold t :foreground waveRed))
-
+  (tree-sitter-hl-face:case-pattern              (:foreground waveRed))
   (tree-sitter-hl-face:constant                  (:foreground surimiOrange))
   (tree-sitter-hl-face:constant.builtin          (:foreground carpYellow :weight 'semi-bold))
-
+  (tree-sitter-hl-face:constructor               (:bold t :foreground waveRed))
   (tree-sitter-hl-face:embedded                  (:foreground boatYellow2))
-
+  (tree-sitter-hl-face:escape                    (:foreground waveRed))
   (tree-sitter-hl-face:function                  (:bold t :foreground crystalBlue :bold t))
   (tree-sitter-hl-face:function.builtin          (:bold t :foreground peachRed :bold t))
   (tree-sitter-hl-face:function.call             (:bold t :foreground springViolet2 :bold t))
+  (tree-sitter-hl-face:function.label            (:bold t :foreground surimiOrange :bold t))
   (tree-sitter-hl-face:function.macro            (:bold t :foreground samuraiRed :bold t))
   (tree-sitter-hl-face:function.special          (:bold t :foreground sakuraPink :bold t))
-  (tree-sitter-hl-face:function.label            (:bold t :foreground surimiOrange :bold t))
-
+  (tree-sitter-hl-face:keyword.compiler          (:foreground peachRed :bold t))
   (tree-sitter-hl-face:method                    (:bold t :foreground lightBlue :bold t))
   (tree-sitter-hl-face:method.call               (:bold t :foreground lightBlue :bold t))
-
+  (tree-sitter-hl-face:number                    (:foreground sakuraPink))
+  (tree-sitter-hl-face:operator                  (:foreground waveRed :bold t))
   (tree-sitter-hl-face:property                  (:foreground carpYellow))
   (tree-sitter-hl-face:property.definition       (:foreground old-white))
-
+  (tree-sitter-hl-face:punctuation               (:foreground lightBlue))
+  (tree-sitter-hl-face:punctuation.bracket       (:foreground springViolet2 :bold t))
+  (tree-sitter-hl-face:punctuation.delimiter     (:foreground springViolet2 :bold t))
+  (tree-sitter-hl-face:punctuation.special       (:foreground peachRed))
   (tree-sitter-hl-face:tag                       (:bold t :foreground peachRed))
-
   (tree-sitter-hl-face:type                      (:bold t :foreground waveAqua2 :bold t))
   (tree-sitter-hl-face:type.argument             (:bold t :foreground surimiOrange :bold t))
   (tree-sitter-hl-face:type.builtin              (:bold t :foreground autumnRed :bold t))
   (tree-sitter-hl-face:type.parameter            (:bold t :foreground surimiOrange :bold t))
   (tree-sitter-hl-face:type.super                (:bold t :foreground samuraiRed :bold t))
-
   (tree-sitter-hl-face:variable                  (:foreground springBlue))
   (tree-sitter-hl-face:variable.builtin          (:foreground waveRed))
   (tree-sitter-hl-face:variable.parameter        (:foreground springViolet2))
   (tree-sitter-hl-face:variable.special          (:foreground surimiOrange))
-  (tree-sitter-hl-face:variable.synthesized      (:foreground lightBlue))
-
-  (tree-sitter-hl-face:number                    (:foreground sakuraPink))
-  (tree-sitter-hl-face:operator                  (:foreground waveRed :bold t))
-
-  (tree-sitter-hl-face:punctuation               (:foreground lightBlue))
-  (tree-sitter-hl-face:punctuation.bracket       (:foreground springViolet2 :bold t))
-  (tree-sitter-hl-face:punctuation.delimiter     (:foreground springViolet2 :bold t))
-  (tree-sitter-hl-face:punctuation.special       (:foreground peachRed))
-
-  (tree-sitter-hl-face:case-pattern              (:foreground waveRed))
+  ;; (tree-sitter-hl-face:variable.synthesized      (:foreground lightBlue))
   (tree-sitter-hl-face:variable.synthesized      (:foreground waveRed))
-  (tree-sitter-hl-face:keyword.compiler          (:foreground peachRed :bold t))
 
   (focus-unfocused                               (:foreground sumiInk-4))
   ))
