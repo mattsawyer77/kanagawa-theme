@@ -105,8 +105,9 @@
   (hi-yellow                                     (:background carpYellow :foreground sumiInk-1b))
 
   ;; Font lock
-  (font-lock-bracket-face (:foreground autumnRed :bold t)) ;; brackets, braces, and parens.
+  (font-lock-bracket-face (:foreground dragonBlue :bold t)) ;; brackets, braces, and parens.
   (font-lock-builtin-face (:bold t :foreground springViolet1 :bold t)) ;; builtins.
+  (font-lock-comment-face (:foreground fujiGray)) ;; comments.
   (font-lock-constant-face (:foreground roninYellow)) ;; constants and labels.
   (font-lock-delimiter-face (:foreground springViolet2 :bold t)) ;; delimiters.
   (font-lock-escape-face (:foreground sakuraPink)) ;; escape sequences in strings.
@@ -122,14 +123,13 @@
   (font-lock-property-use-face (:foreground carpYellow)) ;; property references.
   (font-lock-punctuation-face (:foreground lightBlue)) ;; punctuation characters.
   (font-lock-regexp-face (:foreground surimiOrange)) ;; regexp literals.
+  (font-lock-string-face (:foreground fujiWhite :background sumiInk-2)) ;; strings.
   (font-lock-type-face (:bold t :foreground surimiOrange :bold t)) ;; type and class names.
   (font-lock-variable-name-face (:foreground springBlue)) ;; variable names.
   (font-lock-variable-use-face (:foreground springBlue)) ;; variable references.
   ;; (font-lock-comment-delimiter-face) ;; comment delimiters.
-  (font-lock-comment-face (:foreground fujiGray)) ;; comments.
   ;; (font-lock-doc-face) ;; documentation embedded in program code.
   ;; (font-lock-doc-markup-face) ;; embedded documentation mark-up.
-  (font-lock-string-face (:foreground fujiWhite :background sumiInk-2)) ;; strings.
   ;; (font-lock-warning-face) ;; warnings.
 
   (elisp-shorthand-font-lock-face                (:foreground fujiWhite))
