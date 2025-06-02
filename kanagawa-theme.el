@@ -441,17 +441,27 @@
   (centaur-tabs-selected-modified                (:background sumiInk-1b :foreground peachRed :bold t))
   (centaur-tabs-modified-marker-selected         (:background sumiInk-1b :foreground autumnYellow))
   (centaur-tabs-close-selected                   (:inherit 'centaur-tabs-selected))
-  (tab-line                                      (:background sumiInk-1))
-
   (centaur-tabs-unselected                       (:background sumiInk-0 :foreground sumiInk-4))
   (centaur-tabs-default                          (:background sumiInk-0 :foreground sumiInk-4))
   (centaur-tabs-unselected-modified              (:background sumiInk-0 :foreground peachRed))
   (centaur-tabs-modified-marker-unselected       (:background sumiInk-0 :foreground sumiInk-4))
   (centaur-tabs-close-unselected                 (:background sumiInk-0 :foreground sumiInk-4))
-
   (centaur-tabs-close-mouse-face                 (:background 'unspecified :foreground peachRed))
   (centaur-tabs-default                          (:background roninYellow ))
   (centaur-tabs-name-mouse-face                  (:foreground springBlue :bold t))
+
+  ;; tab-bar
+  (tab-bar                                       (:inherit 'variable-pitch :background sumiInk-0 :foreground fujiWhite))
+  (tab-bar-tab-inactive                          (:inherit 'variable-pitch :background sumiInk-0 :foreground sumiInk-4))
+
+  ;; modern-tab-bar
+  (modern-tab-bar                                (:inherit 'variable-pitch :weight 'light :height 1.0 :background sumiInk-0 :foreground fujiWhite))
+  (modern-tab-bar-tab                            (:background sumiInk-0))
+  (modern-tab-bar-separator                      (:background sumiInk-2 :foreground sumiInk-2))
+  (modern-tab-bar-tab-inactive                   (:foreground sumiInk-4))
+  (modern-tab-bar-tab-highlight                  (:background sumiInk-1b))
+
+  (tab-line                                      (:background sumiInk-1))
 
   (git-gutter:added                              (:foreground autumnGreen))
   (git-gutter:deleted                            (:foreground waveRed))
