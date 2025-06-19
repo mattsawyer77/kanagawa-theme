@@ -118,7 +118,7 @@
   (font-lock-negation-char-face (:foreground surimiOrange)) ;; easy to overlook negation.
   (font-lock-number-face (:foreground sakuraPink)) ;; numbers.
   (font-lock-operator-face (:foreground waveRed :bold t)) ;; operators.
-  (font-lock-preprocessor-face (:foreground surimiOrange)) ;; preprocessor directives.
+  (font-lock-preprocessor-face (:foreground sakuraPink)) ;; preprocessor directives.
   (font-lock-property-name-face (:foreground old-white)) ;; properties of an object.
   (font-lock-property-use-face (:foreground carpYellow)) ;; property references.
   (font-lock-punctuation-face (:foreground lightBlue)) ;; punctuation characters.
@@ -455,8 +455,8 @@
   (tab-bar-tab-inactive                          (:inherit 'variable-pitch :background sumiInk-0 :foreground sumiInk-4))
 
   ;; modern-tab-bar
-  (modern-tab-bar                                (:inherit 'variable-pitch :weight 'light :height 1.0 :background sumiInk-0 :foreground fujiWhite))
-  (modern-tab-bar-tab                            (:background sumiInk-0))
+  (modern-tab-bar                                (:inherit 'variable-pitch :weight 'light :height 1.0 :foreground fujiWhite))
+  (modern-tab-bar-tab                            (:background sumiInk-0 :foreground fujiWhite))
   (modern-tab-bar-separator                      (:background sumiInk-2 :foreground sumiInk-2))
   (modern-tab-bar-tab-inactive                   (:foreground sumiInk-4))
   (modern-tab-bar-tab-highlight                  (:background sumiInk-1b))
@@ -523,6 +523,7 @@
   (tree-sitter-hl-face:variable.synthesized      (:foreground waveRed))
 
   (focus-unfocused                               (:foreground sumiInk-4))
+  (whitespace-indentation                        (:background sumiInk-1c))
   ))
 
 ;;;###autoload
