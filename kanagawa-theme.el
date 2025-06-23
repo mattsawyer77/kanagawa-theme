@@ -188,11 +188,12 @@
 
   ;; org-mode
   (org-done                                      (:foreground dragonBlue))
-  (org-code                                      (:background sumiInk-0))
+  (org-code                                      (:background sumiInk-0 :foreground surimiOrange))
   (org-meta-line                                 (:background winterGreen :foreground springGreen))
-  (org-block                                     (:background sumiInk-0 :foreground sumiInk-4))
+  (org-block                                     (:inherit 'fixed-pitch :background sumiInk-0 :foreground sumiInk-4))
   (org-block-begin-line                          (:background winterBlue :foreground springBlue))
   (org-block-end-line                            (:background winterRed :foreground peachRed))
+  (org-quote                                     (:inherit 'variable-pitch :foreground fujiWhite :italic t))
   (org-headline-done                             (:foreground dragonBlue :strike-through t))
   (org-todo                                      (:background crystalBlue  :bold t))
   (+org-todo-active                              (:background springGreen :bold t))
@@ -207,6 +208,7 @@
   (org-hide                                      (:background sumiInk-1b :foreground sumiInk-1b))
   (org-date                                      (:foreground waveBlue-2))
   (org-ellipsis                                  (:foreground waveBlue-2 :bold t))
+  (org-verbatim                                  (:inherit 'fixed-pitch :foreground old-white))
   (org-level-1                                   (:foreground peachRed :height 1.3 :bold t))
   (org-level-2                                   (:foreground springViolet2 :height 1.15 :bold t))
   (org-level-3                                   (:foreground boatYellow2 :height 1.05))
