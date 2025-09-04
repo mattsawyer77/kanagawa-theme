@@ -190,7 +190,7 @@
   (org-done                                      (:foreground dragonBlue))
   (org-code                                      (:background sumiInk-0 :foreground surimiOrange))
   (org-meta-line                                 (:background winterGreen :foreground springGreen))
-  (org-block                                     (:inherit 'fixed-pitch :background sumiInk-0 :foreground sumiInk-4))
+  (org-block                                     (:inherit 'fixed-pitch :background sumiInk-0 :foreground lightBlue))
   (org-block-begin-line                          (:background winterBlue :foreground springBlue))
   (org-block-end-line                            (:background winterRed :foreground peachRed))
   (org-quote                                     (:inherit 'variable-pitch :foreground fujiWhite :italic t))
