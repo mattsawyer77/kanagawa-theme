@@ -11,6 +11,24 @@
 (unless (>= emacs-major-version 24)
   (error "Requires Emacs 24 or later"))
 
+
+(defcustom kanagawa-theme-heavier-weight 'bold
+  "The font weight to use for heavier-than-normal text."
+  :group 'kanagawa-theme
+  :type '(choice
+          ultra-heavy
+          heavy ;; (a.k.a. black)
+          ultra-bold ;; (a.k.a. extra-bold)
+          bold
+          semi-bold ;; demi-bold
+          medium
+          normal ;; (a.k.a. regular)
+          regular ;; (a.k.a. normal)
+          semi-light ;; (a.k.a. demi-light),
+          light
+          extra-light ;; (a.k.a. ultra-light)
+          thin))
+
 ;; wrap autothemer-deftheme so that autothemer-based theme color names are exported
 (define-advice autothemer-deftheme (:before (_ _ palette &rest _) defcolors)
   (mapcar (lambda (e)
@@ -74,7 +92,7 @@
   (button                                        (:foreground waveAqua2))
   (child-frame                                   (:background sumiInk-0 :foreground sumiInk-0))
   (child-frame-border                            (:background sumiInk-0 :foreground sumiInk-0))
-  (cursor                                        (:background lightBlue :foreground sumiInk-0 :bold t))
+  (cursor                                        (:background lightBlue :foreground sumiInk-0 :weight kanagawa-theme-heavier-weight))
   (error                                         (:foreground samuraiRed))
   (fringe                                        (:foreground sumiInk-3))
   (glyph-face                                    (:background sumiInk-4))
@@ -86,15 +104,15 @@
   (internal-border                               (:background sumiInk-1))
   (vertical-border                               (:foreground sumiInk-1b))
   (line-number                                   (:foreground sumiInk-1c))
-  (line-number-current-line                      (:foreground springViolet2 :background sumiInk-2 :bold t))
+  (line-number-current-line                      (:foreground springViolet2 :background sumiInk-2 :weight kanagawa-theme-heavier-weight))
   (lv-separator                                  (:foreground waveBlue-2 :background sumiInk-2))
   (match                                         (:background carpYellow :foreground sumiInk-0))
   (menu                                          (:background sumiInk-0 :foreground fujiWhite))
-  (mode-line                                     (:background sumiInk-0 :bold t))
-  (mode-line-inactive                            (:background 'unspecified :foreground sumiInk-4 :bold nil))
-  (mode-line-active                              (:background sumiInk-0 :foreground old-white :bold t))
-  (mode-line-highlight                           (:foreground boatYellow2 :bold t))
-  (mode-line-buffer-id                           (:foreground waveAqua2 :bold t))
+  (mode-line                                     (:background sumiInk-0 :weight kanagawa-theme-heavier-weight))
+  (mode-line-inactive                            (:background 'unspecified :foreground sumiInk-4))
+  (mode-line-active                              (:background sumiInk-0 :foreground old-white :weight kanagawa-theme-heavier-weight))
+  (mode-line-highlight                           (:foreground boatYellow2 :weight kanagawa-theme-heavier-weight))
+  (mode-line-buffer-id                           (:foreground waveAqua2 :weight kanagawa-theme-heavier-weight))
   (numbers                                       (:background sakuraPink))
   (region                                        (:background waveBlue-2))
   (separator-line                                (:background sumiInk-0))
@@ -105,26 +123,26 @@
   (hi-yellow                                     (:background carpYellow :foreground sumiInk-1b))
 
   ;; Font lock
-  (font-lock-bracket-face (:foreground dragonBlue :bold t)) ;; brackets, braces, and parens.
-  (font-lock-builtin-face (:bold t :foreground springViolet1 :bold t)) ;; builtins.
+  (font-lock-bracket-face (:foreground dragonBlue :weight kanagawa-theme-heavier-weight)) ;; brackets, braces, and parens.
+  (font-lock-builtin-face (:weight kanagawa-theme-heavier-weight :foreground springViolet1 :weight kanagawa-theme-heavier-weight)) ;; builtins.
   (font-lock-comment-face (:foreground fujiGray)) ;; comments.
   (font-lock-constant-face (:foreground roninYellow)) ;; constants and labels.
-  (font-lock-delimiter-face (:foreground springViolet2 :bold t)) ;; delimiters.
+  (font-lock-delimiter-face (:foreground springViolet2 :weight kanagawa-theme-heavier-weight)) ;; delimiters.
   (font-lock-escape-face (:foreground sakuraPink)) ;; escape sequences in strings.
-  (font-lock-function-call-face (:bold t :foreground lightBlue :bold t)) ;; function calls.
-  (font-lock-function-name-face (:bold t :foreground lightBlue :bold t)) ;; function names.
-  (font-lock-keyword-face (:foreground oniViolet :weight 'semi-bold)) ;; keywords.
+  (font-lock-function-call-face (:weight kanagawa-theme-heavier-weight :foreground lightBlue :weight kanagawa-theme-heavier-weight)) ;; function calls.
+  (font-lock-function-name-face (:weight kanagawa-theme-heavier-weight :foreground lightBlue :weight kanagawa-theme-heavier-weight)) ;; function names.
+  (font-lock-keyword-face (:foreground oniViolet :weight kanagawa-theme-heavier-weight)) ;; keywords.
   (font-lock-misc-punctuation-face (:foreground peachRed)) ;; miscellaneous punctuation.
   (font-lock-negation-char-face (:foreground surimiOrange)) ;; easy to overlook negation.
   (font-lock-number-face (:foreground sakuraPink)) ;; numbers.
-  (font-lock-operator-face (:foreground waveRed :bold t)) ;; operators.
+  (font-lock-operator-face (:foreground waveRed :weight kanagawa-theme-heavier-weight)) ;; operators.
   (font-lock-preprocessor-face (:foreground sakuraPink)) ;; preprocessor directives.
   (font-lock-property-name-face (:foreground old-white)) ;; properties of an object.
   (font-lock-property-use-face (:foreground carpYellow)) ;; property references.
   (font-lock-punctuation-face (:foreground lightBlue)) ;; punctuation characters.
   (font-lock-regexp-face (:foreground surimiOrange)) ;; regexp literals.
   (font-lock-string-face (:foreground fujiWhite :background sumiInk-2)) ;; strings.
-  (font-lock-type-face (:bold t :foreground surimiOrange :bold t)) ;; type and class names.
+  (font-lock-type-face (:weight kanagawa-theme-heavier-weight :foreground surimiOrange)) ;; type and class names.
   (font-lock-variable-name-face (:foreground springBlue)) ;; variable names.
   (font-lock-variable-use-face (:foreground springBlue)) ;; variable references.
   ;; (font-lock-comment-delimiter-face) ;; comment delimiters.
@@ -140,7 +158,7 @@
   (epa-mark                                      (:foreground waveRed))
   (dired-mark                                    (:foreground waveRed))
   (trailing-whitespace                           (:background comet))
-  (mode-line                                     (:background sumiInk-0 :foreground fujiWhite :bold t))
+  (mode-line                                     (:background sumiInk-0 :foreground fujiWhite :weight kanagawa-theme-heavier-weight))
 
   ;; Battery colors
   (doom-modeline-battery-critical                (:foreground peachRed))
@@ -159,16 +177,16 @@
   (doom-modeline-evil-replace-state              (:foreground roninYellow))
   (doom-modeline-evil-operator-state             (:foreground crystalBlue))
 
-  (doom-modeline                                 (:inherit 'variable-pitch :bold t))
-  (doom-modeline-project-dir                     (:inherit 'variable-pitch :bold t :foreground waveAqua2))
-  (doom-modeline-buffer-path                     (:inherit 'variable-pitch :bold t :foreground waveAqua2))
-  (doom-modeline-buffer-file                     (:inherit 'variable-pitch :bold t :foreground crystalBlue))
-  (doom-modeline-buffer-modified                 (:inherit 'variable-pitch :bold t :foreground peachRed))
+  (doom-modeline                                 (:inherit 'variable-pitch :weight kanagawa-theme-heavier-weight :background sumiInk-3))
+  (doom-modeline-project-dir                     (:inherit 'variable-pitch :weight kanagawa-theme-heavier-weight :foreground waveAqua2 :background sumiInk-3))
+  (doom-modeline-buffer-path                     (:inherit 'variable-pitch :weight kanagawa-theme-heavier-weight :foreground waveAqua2 :background sumiInk-3))
+  (doom-modeline-buffer-file                     (:inherit 'variable-pitch :weight kanagawa-theme-heavier-weight :foreground crystalBlue :background sumiInk-3))
+  (doom-modeline-buffer-modified                 (:inherit 'variable-pitch :weight kanagawa-theme-heavier-weight :foreground peachRed :background sumiInk-3))
   (doom-modeline-error                           (:inherit 'variable-pitch :background samuraiRed))
-  (doom-modeline-buffer-major-mode               (:inherit 'variable-pitch :foreground waveAqua2 :bold t))
-  (doom-modeline-info                            (:inherit 'variable-pitch :bold t :foreground lightBlue))
-  (doom-modeline-project-dir                     (:inherit 'variable-pitch :bold t :foreground surimiOrange))
-  (doom-modeline-bar                             (:inherit 'variable-pitch :bold t :background springViolet1))
+  (doom-modeline-buffer-major-mode               (:inherit 'variable-pitch :foreground waveAqua2 :background sumiInk-3 :weight kanagawa-theme-heavier-weight))
+  (doom-modeline-info                            (:inherit 'variable-pitch :weight kanagawa-theme-heavier-weight :foreground lightBlue :background sumiInk-3))
+  (doom-modeline-project-dir                     (:inherit 'variable-pitch :weight kanagawa-theme-heavier-weight :foreground surimiOrange :background sumiInk-3))
+  (doom-modeline-bar                             (:inherit 'variable-pitch :weight kanagawa-theme-heavier-weight :background springViolet1))
   (doom-modeline-panel                           (:inherit 'variable-pitch :inherit 'bold :background boatYellow2 :foreground sumiInk-2))
   (doom-themes-visual-bell                       (:background autumnRed))
 
@@ -195,11 +213,11 @@
   (org-block-end-line                            (:background winterRed :foreground peachRed))
   (org-quote                                     (:inherit 'variable-pitch :foreground fujiWhite :italic t))
   (org-headline-done                             (:foreground dragonBlue :strike-through t))
-  (org-todo                                      (:background crystalBlue  :bold t))
-  (+org-todo-active                              (:background springGreen :bold t))
-  (+org-todo-cancel                              (:background peachRed :bold t))
-  (+org-todo-onhold                              (:background carpYellow :bold t))
-  (+org-todo-project                             (:background crystalBlue :bold t))
+  (org-todo                                      (:background crystalBlue  :weight kanagawa-theme-heavier-weight))
+  (+org-todo-active                              (:background springGreen :weight kanagawa-theme-heavier-weight))
+  (+org-todo-cancel                              (:background peachRed :weight kanagawa-theme-heavier-weight))
+  (+org-todo-onhold                              (:background carpYellow :weight kanagawa-theme-heavier-weight))
+  (+org-todo-project                             (:background crystalBlue :weight kanagawa-theme-heavier-weight))
 
   (org-headline-todo                             (:foreground sumiInk-2))
   (org-upcoming-deadline                         (:foreground peachRed))
@@ -207,10 +225,10 @@
   (org-indent                                    (:background sumiInk-1b :foreground sumiInk-1b))
   (org-hide                                      (:background sumiInk-1b :foreground sumiInk-1b))
   (org-date                                      (:foreground waveBlue-2))
-  (org-ellipsis                                  (:foreground waveBlue-2 :bold t))
+  (org-ellipsis                                  (:foreground waveBlue-2 :weight kanagawa-theme-heavier-weight))
   (org-verbatim                                  (:inherit 'fixed-pitch :foreground old-white))
-  (org-level-1                                   (:foreground peachRed :height 1.3 :bold t))
-  (org-level-2                                   (:foreground springViolet2 :height 1.15 :bold t))
+  (org-level-1                                   (:foreground peachRed :height 1.3 :weight kanagawa-theme-heavier-weight))
+  (org-level-2                                   (:foreground springViolet2 :height 1.15 :weight kanagawa-theme-heavier-weight))
   (org-level-3                                   (:foreground boatYellow2 :height 1.05))
   (org-level-4                                   (:foreground fujiWhite))
   (org-level-5                                   (:foreground fujiWhite))
@@ -220,7 +238,7 @@
 
   ;; which-key
   (which-key-key-face                            (:inherit 'font-lock-variable-name-face))
-  (which-func                                    (:inherit 'font-lock-function-name-face :bold t))
+  (which-func                                    (:inherit 'font-lock-function-name-face :weight kanagawa-theme-heavier-weight))
   (which-key-group-description-face              (:foreground waveRed))
   (which-key-command-description-face            (:foreground crystalBlue))
   (which-key-local-map-description-face          (:foreground carpYellow))
@@ -260,10 +278,10 @@
   (rainbow-delimiters-depth-9-face               (:foreground springViolet2))
 
   ;; show-paren
-  (show-paren-match                              (:background waveAqua1 :foreground sumiInk-0 :bold t))
-  (show-paren-match-expression                    (:background waveAqua1 :foreground sumiInk-0 :bold t))
+  (show-paren-match                              (:background waveAqua1 :foreground sumiInk-0 :weight kanagawa-theme-heavier-weight))
+  (show-paren-match-expression                    (:background waveAqua1 :foreground sumiInk-0 :weight kanagawa-theme-heavier-weight))
   (show-paren-mismatch                           (:background peachRed :foreground old-white))
-  (tooltip                                       (:foreground sumiInk-0 :background carpYellow :bold t))
+  (tooltip                                       (:foreground sumiInk-0 :background carpYellow :weight kanagawa-theme-heavier-weight))
 
   ;; company-box
   (company-tooltip                               (:background sumiInk-2))
@@ -272,13 +290,13 @@
   (company-tooltip-scrollbar-thumb               (:background autumnRed))
   (company-tooltip-scrollbar-track               (:background sumiInk-2))
   (company-tooltip-search                        (:background carpYellow :foreground sumiInk-0 :distant-foreground fujiWhite))
-  (company-tooltip-selection                     (:background peachRed :foreground winterRed :bold t))
+  (company-tooltip-selection                     (:background peachRed :foreground winterRed :weight kanagawa-theme-heavier-weight))
   (company-tooltip-mouse                         (:background sumiInk-2 :foreground sumiInk-0 :distant-foreground fujiWhite))
   (company-tooltip-annotation                    (:foreground peachRed :distant-foreground sumiInk-1))
   (company-scrollbar-bg                          (:inherit 'tooltip))
   (company-scrollbar-fg                          (:background peachRed))
   (company-preview                               (:foreground carpYellow))
-  (company-preview-common                        (:foreground peachRed :bold t))
+  (company-preview-common                        (:foreground peachRed :weight kanagawa-theme-heavier-weight))
   (company-preview-search                        (:inherit 'company-tooltip-search))
   (company-template-field                        (:inherit 'match))
 
@@ -315,7 +333,7 @@
   (highlight-symbol-face                         (:background waveBlue-1 :foreground lightBlue))
 
   ;; ivy
-  (ivy-current-match                             (:background crystalBlue :foreground sumiInk-0 :bold t))
+  (ivy-current-match                             (:background crystalBlue :foreground sumiInk-0 :weight kanagawa-theme-heavier-weight))
   (ivy-action                                    (:background 'unspecified :foreground fujiWhite))
   (ivy-grep-line-number                          (:background 'unspecified :foreground springGreen))
   (ivy-minibuffer-match-face-1                   (:background 'unspecified :foreground waveRed))
@@ -361,9 +379,9 @@
   (lsp-ui-sideline-symbol                        (:foreground dragonBlue))
 
   ;; dashboard
-  (dashboard-heading                             (:foreground springViolet2 :bold t))
+  (dashboard-heading                             (:foreground springViolet2 :weight kanagawa-theme-heavier-weight))
   (dashboard-items-face                          (:bold nil :foreground fujiWhite))
-  (dashboard-banner-logo-title                   (:bold t :height 200))
+  (dashboard-banner-logo-title                   (:weight kanagawa-theme-heavier-weight :height 200))
   (dashboard-no-items-face                       (:foreground sumiInk-4))
 
   ;; all-the-icons
@@ -373,8 +391,8 @@
   (all-the-icons-purple                          (:foreground springViolet2))
 
   ;; evil
-  (evil-ex-lazy-highlight                        (:foreground winterGreen :background autumnGreen :bold t))
-  (evil-ex-substitute-matches                    (:foreground winterRed :background autumnRed :bold t))
+  (evil-ex-lazy-highlight                        (:foreground winterGreen :background autumnGreen :weight kanagawa-theme-heavier-weight))
+  (evil-ex-substitute-matches                    (:foreground winterRed :background autumnRed :weight kanagawa-theme-heavier-weight))
   (evil-ex-substitute-replacement                (:foreground surimiOrange :strike-through nil :inherit 'evil-ex-substitute-matches))
   (evil-search-highlight-persist-highlight-face  (:background carpYellow))
 
@@ -414,17 +432,17 @@
 
   ;; ace
   (ace-jump-face-background                      (:foreground waveBlue-2))
-  (ace-jump-face-foreground                      (:foreground peachRed :background sumiInk-0 :bold t))
+  (ace-jump-face-foreground                      (:foreground peachRed :background sumiInk-0 :weight kanagawa-theme-heavier-weight))
 
   ;; vertico
   (vertico-multiline                             (:background samuraiRed))
-  (vertico-group-title                           (:background winterBlue :foreground lightBlue :bold t))
+  (vertico-group-title                           (:background winterBlue :foreground lightBlue :weight kanagawa-theme-heavier-weight))
   (vertico-group-separator                       (:background winterBlue :foreground lightBlue :strike-through t))
-  (vertico-current                               (:foreground carpYellow :bold t :italic nil :background waveBlue-1))
+  (vertico-current                               (:foreground carpYellow :weight kanagawa-theme-heavier-weight :italic nil :background waveBlue-1))
 
   (vertico-posframe-border                       (:background sumiInk-3))
   (vertico-posframe                              (:background sumiInk-2))
-  (orderless-match-face-0                        (:foreground crystalBlue :bold t))
+  (orderless-match-face-0                        (:foreground crystalBlue :weight kanagawa-theme-heavier-weight))
 
   (comint-highlight-prompt                       (:background springViolet2 :foreground sumiInk-1))
   (completions-annotations                       (:background 'unspecified :foreground dragonBlue))
@@ -438,9 +456,9 @@
   (hydra-face-teal                               (:foreground lightBlue))
 
   ;; centaur-tabs
-  (centaur-tabs-active-bar-face                  (:background springBlue :foreground fujiWhite :bold t))
-  (centaur-tabs-selected                         (:background sumiInk-1b :foreground fujiWhite :bold t))
-  (centaur-tabs-selected-modified                (:background sumiInk-1b :foreground peachRed :bold t))
+  (centaur-tabs-active-bar-face                  (:background springBlue :foreground fujiWhite :weight kanagawa-theme-heavier-weight))
+  (centaur-tabs-selected                         (:background sumiInk-1b :foreground fujiWhite :weight kanagawa-theme-heavier-weight))
+  (centaur-tabs-selected-modified                (:background sumiInk-1b :foreground peachRed :weight kanagawa-theme-heavier-weight))
   (centaur-tabs-modified-marker-selected         (:background sumiInk-1b :foreground autumnYellow))
   (centaur-tabs-close-selected                   (:inherit 'centaur-tabs-selected))
   (centaur-tabs-unselected                       (:background sumiInk-0 :foreground sumiInk-4))
@@ -450,7 +468,7 @@
   (centaur-tabs-close-unselected                 (:background sumiInk-0 :foreground sumiInk-4))
   (centaur-tabs-close-mouse-face                 (:background 'unspecified :foreground peachRed))
   (centaur-tabs-default                          (:background roninYellow ))
-  (centaur-tabs-name-mouse-face                  (:foreground springBlue :bold t))
+  (centaur-tabs-name-mouse-face                  (:foreground springBlue :weight kanagawa-theme-heavier-weight))
 
   ;; tab-bar
   (tab-bar                                       (:inherit 'variable-pitch :background sumiInk-0 :foreground fujiWhite))
@@ -487,36 +505,36 @@
   (ansi-color-bright-white                       (:foreground old-white))
   (ansi-color-bright-white                       (:foreground old-white))
 
-  (tree-sitter-hl-face:attribute                 (:bold t :foreground surimiOrange))
+  (tree-sitter-hl-face:attribute                 (:weight kanagawa-theme-heavier-weight :foreground surimiOrange))
   (tree-sitter-hl-face:case-pattern              (:foreground waveRed))
   (tree-sitter-hl-face:constant                  (:foreground surimiOrange))
-  (tree-sitter-hl-face:constant.builtin          (:foreground carpYellow :weight 'semi-bold))
-  (tree-sitter-hl-face:constructor               (:bold t :foreground waveRed))
+  (tree-sitter-hl-face:constant.builtin          (:foreground carpYellow :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:constructor               (:weight kanagawa-theme-heavier-weight :foreground waveRed))
   (tree-sitter-hl-face:embedded                  (:foreground boatYellow2))
   (tree-sitter-hl-face:escape                    (:foreground waveRed))
-  (tree-sitter-hl-face:function                  (:bold t :foreground crystalBlue :bold t))
-  (tree-sitter-hl-face:function.builtin          (:bold t :foreground peachRed :bold t))
-  (tree-sitter-hl-face:function.call             (:bold t :foreground springViolet2 :bold t))
-  (tree-sitter-hl-face:function.label            (:bold t :foreground surimiOrange :bold t))
-  (tree-sitter-hl-face:function.macro            (:bold t :foreground samuraiRed :bold t))
-  (tree-sitter-hl-face:function.special          (:bold t :foreground sakuraPink :bold t))
-  (tree-sitter-hl-face:keyword.compiler          (:foreground peachRed :bold t))
-  (tree-sitter-hl-face:method                    (:bold t :foreground lightBlue :bold t))
-  (tree-sitter-hl-face:method.call               (:bold t :foreground lightBlue :bold t))
+  (tree-sitter-hl-face:function                  (:weight kanagawa-theme-heavier-weight :foreground crystalBlue :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:function.builtin          (:weight kanagawa-theme-heavier-weight :foreground peachRed :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:function.call             (:weight kanagawa-theme-heavier-weight :foreground springViolet2 :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:function.label            (:weight kanagawa-theme-heavier-weight :foreground surimiOrange :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:function.macro            (:weight kanagawa-theme-heavier-weight :foreground samuraiRed :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:function.special          (:weight kanagawa-theme-heavier-weight :foreground sakuraPink :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:keyword.compiler          (:foreground peachRed :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:method                    (:weight kanagawa-theme-heavier-weight :foreground lightBlue :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:method.call               (:weight kanagawa-theme-heavier-weight :foreground lightBlue :weight kanagawa-theme-heavier-weight))
   (tree-sitter-hl-face:number                    (:foreground sakuraPink))
-  (tree-sitter-hl-face:operator                  (:foreground waveRed :bold t))
+  (tree-sitter-hl-face:operator                  (:foreground waveRed :weight kanagawa-theme-heavier-weight))
   (tree-sitter-hl-face:property                  (:foreground carpYellow))
   (tree-sitter-hl-face:property.definition       (:foreground old-white))
   (tree-sitter-hl-face:punctuation               (:foreground lightBlue))
-  (tree-sitter-hl-face:punctuation.bracket       (:foreground springViolet2 :bold t))
-  (tree-sitter-hl-face:punctuation.delimiter     (:foreground springViolet2 :bold t))
+  (tree-sitter-hl-face:punctuation.bracket       (:foreground springViolet2 :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:punctuation.delimiter     (:foreground springViolet2 :weight kanagawa-theme-heavier-weight))
   (tree-sitter-hl-face:punctuation.special       (:foreground peachRed))
-  (tree-sitter-hl-face:tag                       (:bold t :foreground peachRed))
-  (tree-sitter-hl-face:type                      (:bold t :foreground waveAqua2 :bold t))
-  (tree-sitter-hl-face:type.argument             (:bold t :foreground surimiOrange :bold t))
-  (tree-sitter-hl-face:type.builtin              (:bold t :foreground autumnRed :bold t))
-  (tree-sitter-hl-face:type.parameter            (:bold t :foreground surimiOrange :bold t))
-  (tree-sitter-hl-face:type.super                (:bold t :foreground samuraiRed :bold t))
+  (tree-sitter-hl-face:tag                       (:weight kanagawa-theme-heavier-weight :foreground peachRed))
+  (tree-sitter-hl-face:type                      (:weight kanagawa-theme-heavier-weight :foreground waveAqua2 :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:type.argument             (:weight kanagawa-theme-heavier-weight :foreground surimiOrange :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:type.builtin              (:weight kanagawa-theme-heavier-weight :foreground autumnRed :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:type.parameter            (:weight kanagawa-theme-heavier-weight :foreground surimiOrange :weight kanagawa-theme-heavier-weight))
+  (tree-sitter-hl-face:type.super                (:weight kanagawa-theme-heavier-weight :foreground samuraiRed :weight kanagawa-theme-heavier-weight))
   (tree-sitter-hl-face:variable                  (:foreground springBlue))
   (tree-sitter-hl-face:variable.builtin          (:foreground waveRed))
   (tree-sitter-hl-face:variable.parameter        (:foreground springViolet2))
