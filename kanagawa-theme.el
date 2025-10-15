@@ -188,7 +188,7 @@
   (doom-modeline-info                            (:inherit 'variable-pitch :weight kanagawa-theme-heavier-weight :foreground lightBlue :background sumiInk-3))
   (doom-modeline-project-dir                     (:inherit 'variable-pitch :weight kanagawa-theme-heavier-weight :foreground surimiOrange :background sumiInk-3))
   (doom-modeline-bar                             (:inherit 'variable-pitch :weight kanagawa-theme-heavier-weight :background springViolet1))
-  (doom-modeline-panel                           (:inherit 'variable-pitch :inherit 'bold :background boatYellow2 :foreground sumiInk-2))
+  (doom-modeline-panel                           (:inherit 'variable-pitch :background boatYellow2 :foreground sumiInk-2))
   (doom-themes-visual-bell                       (:background autumnRed))
 
   ;; elfeed
@@ -545,6 +545,7 @@
 
   (focus-unfocused                               (:foreground sumiInk-4))
   (whitespace-indentation                        (:background sumiInk-1c))
+  (sh-heredoc                                    (:foreground springGreen))
   ))
 
 ;;;###autoload
