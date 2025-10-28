@@ -212,7 +212,7 @@
   (org-block                                     (:inherit 'fixed-pitch :background sumiInk-0 :foreground lightBlue))
   (org-block-begin-line                          (:background winterBlue :foreground springBlue))
   (org-block-end-line                            (:background winterBlue :foreground springBlue))
-  (org-quote                                     (:inherit 'variable-pitch :foreground fujiWhite :italic t))
+  (org-quote                                     (:inherit 'variable-pitch :background winterBlue :foreground fujiWhite :italic t))
   (org-headline-done                             (:foreground dragonBlue :strike-through t))
   (org-todo                                      (:background crystalBlue  :weight kanagawa-theme-heavier-weight))
   (+org-todo-active                              (:background springGreen :weight kanagawa-theme-heavier-weight))
