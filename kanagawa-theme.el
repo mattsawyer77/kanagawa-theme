@@ -11,7 +11,6 @@
 (unless (>= emacs-major-version 24)
   (error "Requires Emacs 24 or later"))
 
-
 (defcustom kanagawa-theme-heavier-weight 'bold
   "The font weight to use for heavier-than-normal text."
   :group 'kanagawa-theme
@@ -92,7 +91,7 @@
   (button                                        (:foreground waveAqua2))
   (child-frame                                   (:background sumiInk-0 :foreground sumiInk-0))
   (child-frame-border                            (:background sumiInk-0 :foreground sumiInk-0))
-  (cursor                                        (:background lightBlue :foreground sumiInk-0 :weight kanagawa-theme-heavier-weight))
+  (cursor                                        (:background lightBlue :foreground sumiInk-0))
   (error                                         (:foreground samuraiRed))
   (fringe                                        (:foreground sumiInk-3))
   (glyph-face                                    (:background sumiInk-4))
@@ -223,8 +222,8 @@
   (org-headline-todo                             (:foreground sumiInk-2))
   (org-upcoming-deadline                         (:foreground peachRed))
   (org-footnote                                  (:foreground waveAqua2))
-  (org-indent                                    (:background sumiInk-1b :foreground sumiInk-1b))
-  (org-hide                                      (:background sumiInk-1b :foreground sumiInk-1b))
+  (org-indent                                    (:background sumiInk-1 :foreground sumiInk-1))
+  (org-hide                                      (:background sumiInk-1 :foreground sumiInk-1))
   (org-date                                      (:foreground waveBlue-2))
   (org-ellipsis                                  (:foreground waveBlue-2 :weight kanagawa-theme-heavier-weight))
   (org-verbatim                                  (:inherit 'fixed-pitch :foreground old-white))
